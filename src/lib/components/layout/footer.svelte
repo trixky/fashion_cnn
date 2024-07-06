@@ -1,5 +1,6 @@
 <!-- ================================================= SCRIPT -->
 <script lang="ts">
+  import { base } from '$app/paths';
 </script>
 
 <!-- ================================================= CONTENT -->
@@ -7,7 +8,7 @@
   <a href="https://www.tensorflow.org/js?hl=fr">
     <div class="flex justify-center items-center gap-3 p-4">
       <p class="opacity-50">made with</p>
-      <img src="./tensorflow-js.png" width="60" alt="tensorflow js logo" />
+      <img src={base + "/tensorflow-js.png"} width="60" alt="tensorflow js logo" />
     </div>
   </a>
 </footer>

@@ -1,5 +1,6 @@
 <!-- ================================================= SCRIPT -->
 <script lang="ts">
+  import { base } from '$app/paths';
   import "../styles/reset.css";
   import "../styles/tailwind.css";
   import "../styles/main.css";
@@ -18,7 +19,7 @@
     <div
       class="flex lg:flex justify-center items-center absolute -z-10 h-[100vh] w-[100vw] min-w-[140vh] bg-black"
     >
-      <img src="/background.gif" alt="background" />
+      <img src={base + "/background.gif"} alt="background" />
     </div>
     <Header />
     <main class="flex flex-col justify-center items-center p-4">

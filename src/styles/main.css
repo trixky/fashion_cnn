@@ -1,3 +1,12 @@
+html {
+  background-color: black;
+}
+
+* {
+  @apply text-white;  
+  font-family: "monospace", sans-serif;
+}
+
 ::-moz-selection {
   /* Code for Firefox */
   color: initial;
@@ -27,7 +36,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Staatliches", sans-serif;
+  font-family: "Tiny5", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -37,11 +46,11 @@ h1 {
 }
 
 button {
-  @apply px-2 py-1 !bg-orange-500 opacity-50 text-white  transition-opacity;
+  @apply px-2 py-1 !bg-orange-500 opacity-50 text-white  transition-opacity duration-200;
 }
 
 button:disabled {
-  @apply cursor-not-allowed !opacity-25;
+  @apply cursor-not-allowed opacity-10;
 }
 
 button:not(:disabled):hover {

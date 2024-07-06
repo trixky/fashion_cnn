@@ -1,0 +1,49 @@
+::-moz-selection {
+  /* Code for Firefox */
+  color: initial;
+  background: orange;
+}
+
+::selection {
+  color: initial;
+  background: orange;
+}
+
+a {
+  @apply cursor-pointer hover:underline underline-offset-2;
+}
+
+img,
+button,
+input,
+select,
+textarea {
+  @apply select-none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Staatliches", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1 {
+  @apply text-5xl;
+}
+
+button {
+  @apply px-2 py-1 !bg-orange-500 opacity-50 text-white  transition-opacity;
+}
+
+button:disabled {
+  @apply cursor-not-allowed !opacity-25;
+}
+
+button:not(:disabled):hover {
+  @apply opacity-100;
+}

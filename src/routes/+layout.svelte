@@ -14,7 +14,7 @@
   class="relative mx-auto flex flex-col items-center w-full h-full min-h-[100vh] overflow-hidden"
 >
   <div
-    class="relative mx-auto flex flex-col items-center w-full md:w-[500px] bg-black h-full min-h-[100vh] bg-opacity-90 overflow-hidden"
+    class="relative mx-auto flex flex-col items-center w-full md:w-[500px] bg-black h-full min-h-[100vh] bg-opacity-90 overflow-hidden md:border-x border-solid border-orange-400"
   >
     <div
       class="flex lg:flex justify-center items-center absolute -z-10 h-[100vh] w-[100vw] min-w-[140vh] bg-black"

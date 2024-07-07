@@ -6,6 +6,19 @@
   import evaluate from "$lib/logic/evaluate";
   import * as tf from "@tensorflow/tfjs";
 
+  const LOOKUP = [
+    "T-shirt",
+    "Trouser",
+    "Pullover",
+    "Dress",
+    "Coat",
+    "Sandal",
+    "Shirt",
+    "Sneaker",
+    "Bag",
+    "Boot",
+  ];
+
   interface Dataset {
     inputs: number[][];
     outputs: number[];
@@ -65,6 +78,8 @@
       inputEvaluation = input;
       answerEvaluation = answer;
       expectedEvaluation = expected;
+
+      console.log(input);
     }
   }
 
@@ -86,7 +101,7 @@
   <div id="progress" class="my-2">
     <div>
       <p>epoch:</p>
-      <p>&nbsp;{(epoch + 1).toString().padStart(2, " ")} / 50</p>
+      <p>&nbsp;{(epoch + 1).toString().padStart(2, " ")} / 10</p>
     </div>
     <div>
       <p>accuracy:</p>
@@ -105,8 +120,11 @@
 </div>
 <ol class="mt-5">
   {#each inputEvaluation as cell}
-    {@const intensity = Math.min(Math.floor(cell * 10), 9)}
-    <li class="bg-black bg-opacity-80 w-2 h-2 md:w-3 md:h-3" style="opacity: {cell + 0.1};">
+    {@const intensity = Math.min(Math.floor((cell * 10) / 255), 9)}
+    <li
+      class="bg-black bg-opacity-80 w-2 h-2 md:w-3 md:h-3"
+      style="opacity: {intensity / 9 + 0.1};"
+    >
       <p class="text-[0.7em] md:text-xs">{intensity}</p>
     </li>
   {/each}
@@ -114,8 +132,9 @@
 <div id="result" class="flex justify-between w-full mt-3">
   <p>
     <span class:nothing={model === null || model === undefined}>expected:</span
-    ><span class="nothing">&nbsp;</span><span class:nothing={expectedEvaluation === null}
-      >{expectedEvaluation === null ? "?" : expectedEvaluation}</span
+    ><span class="nothing">&nbsp;</span><span
+      class:nothing={expectedEvaluation === null}
+      >{expectedEvaluation === null ? "?" : LOOKUP[expectedEvaluation]}</span
     >
   </p>
   <p>
@@ -127,7 +146,7 @@
       class:failure={answerEvaluation !== null &&
         expectedEvaluation !== answerEvaluation}
     >
-      {answerEvaluation === null ? "?" : answerEvaluation}
+      {answerEvaluation === null ? "?" : LOOKUP[answerEvaluation]}
     </span>
   </p>
 </div>
@@ -141,8 +160,20 @@
     <p>20% (8 000)</p>
   </div>
   <div>
-    <p>hidden layers (2):</p>
-    <p>32 + 16</p>
+    <p>convolutional layers (4):</p>
+    <p>&nbsp;</p>
+  </div>
+  <div>
+    <p>&nbsp;</p>
+    <p>16(28x28)[5x5 filter] + stride[2] & max pool[2x2]</p>
+  </div>
+  <div>
+    <p>&nbsp;</p>
+    <p>32(14x14)[5x5 filter] + stride[2] & max pool[2x2]</p>
+  </div>
+  <div>
+    <p>hidden layers (1):</p>
+    <p>128</p>
   </div>
   <div>
     <p>activation functions:</p>

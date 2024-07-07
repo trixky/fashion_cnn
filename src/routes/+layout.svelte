@@ -34,15 +34,15 @@
   /* make animation the image need to make a infinit 360 rotation */
   img {
     animation: spin 60s linear infinite;
-    transform: scale(1.2);
+    transform: scale(1.4);
   }
 
   @keyframes spin {
     0% {
-      transform: scale(1.2) rotate(0deg);
+      transform: scale(1.4) rotate(0deg);
     }
     100% {
-      transform: scale(1.2) rotate(360deg);
+      transform: scale(1.4) rotate(360deg);
     }
   }
 </style>

@@ -1,8 +1,8 @@
 # fashion_cnn
 
-An [online](https://trixky.github.io/fashion_cnn/) digit classifier using the [multi-layer perceptrons](https://en.wikipedia.org/wiki/Multilayer_perceptron) (MLP) model.
+An [online](https://trixky.github.io/fashion_cnn/) [convolutional neural network](https://en.wikipedia.org/wiki/Convolutional_neural_network) (CNN) model for classifying fashion items.
 
-The model is trained on the [MNIST dataset](https://en.wikipedia.org/wiki/MNIST_database) and implemented using the [TensorFlow.js](https://www.tensorflow.org/js) library.
+The model is trained on the [MNIST fashion dataset](https://www.tensorflow.org/datasets/catalog/fashion_mnist) and implemented using the [TensorFlow.js](https://www.tensorflow.org/js) library.
 
 > The model is loaded on the client side and all calculations are made on the device.
 
@@ -17,12 +17,15 @@ npm run dev #localhost:5173
 
 ## Model caracteristics
 
-- dataset: MNIST (10 000 samples)
-- input layer: 784 neurons (28x28 pixels)
-- hidden layers (2): 32 neurons (ReLU activation) + 16 neurons (ReLU activation)
-- output layer: 10 neurons (Softmax activation)
+- dataset: MNIST (fashion) (10 000 samples)
+- input layer: 784 (28x28 pixels)
+- convolutional layers (4):
+    * 16(28x28)[5x5 filter] + stride[2] & max pool[2x2]
+    * 32(14x14)[5x5 filter] + stride[2] & max pool[2x2]
+- hidden layers (1): 128 neurons (ReLU activation)
+- output layer: 10 (Softmax activation)
 - optimizer: Adam
 - loss: categoricalCrossentropy
 - metrics: accuracy
-- epochs: 50
+- epochs: 10
 - batch size: 512

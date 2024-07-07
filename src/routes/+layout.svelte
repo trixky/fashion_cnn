@@ -14,12 +14,12 @@
   class="relative mx-auto flex flex-col items-center w-full h-full min-h-[100vh] overflow-hidden"
 >
   <div
-    class="relative mx-auto flex flex-col items-center w-full md:w-[500px] bg-black h-full min-h-[100vh] bg-opacity-90 overflow-hidden md:border-x border-solid border-orange-400"
+    class="relative mx-auto flex flex-col items-center w-full md:w-[500px] bg-black h-full min-h-[100vh] bg-opacity-80 overflow-hidden md:border-x border-solid border-black"
   >
     <div
-      class="flex lg:flex justify-center items-center absolute -z-10 h-[100vh] w-[100vw] min-w-[140vh] bg-black"
+      class="flex lg:flex justify-center items-center absolute -z-10 h-[100vh] w-[100vw] min-w-[140vh] bg-white"
     >
-      <img src={base + "/background.gif"} alt="background" />
+      <img src={base + "/background.png"} alt="background" />
     </div>
     <Header />
     <main class="flex flex-col justify-center items-center p-4">
@@ -35,9 +35,6 @@
   img {
     animation: spin 60s linear infinite;
     transform: scale(1.2);
-
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-    filter: grayscale(100%);
   }
 
   @keyframes spin {

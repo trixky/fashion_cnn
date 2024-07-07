@@ -1,7 +1,7 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
-const baseDir = process.env.BASE_PATH || "/digit_classifier";
+const baseDir = process.env.BASE_PATH || "/fashion_cnn";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {

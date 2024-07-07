@@ -1,8 +1,12 @@
 # digit_classifier
 
-This is a simple [online](https://trixky.github.io/digit_classifier/) digit classifier using the [multi-layer perceptrons](https://en.wikipedia.org/wiki/Multilayer_perceptron) (MLP) model. The model is trained on the [MNIST dataset](https://en.wikipedia.org/wiki/MNIST_database). The model is implemented using the [TensorFlow.js](https://www.tensorflow.org/js) library.
+This is a simple [online](https://trixky.github.io/digit_classifier/) digit classifier using the [multi-layer perceptrons](https://en.wikipedia.org/wiki/Multilayer_perceptron) (MLP) model.
 
-![Recordit GIF](https://raw.githubusercontent.com/trixky/digit_classifier/main/.demo/screenshots.gif)
+The model is trained on the [MNIST dataset](https://en.wikipedia.org/wiki/MNIST_database) and implemented using the [TensorFlow.js](https://www.tensorflow.org/js) library.
+
+> The model is loaded on the client side and all calculations are made on the device.
+
+<img src="https://raw.githubusercontent.com/trixky/digit_classifier/main/.demo/screenshots.gif"  width="442">
 
 ## Setup
 
